@@ -1,0 +1,12 @@
+/* Login Screen */
+"login_title" = "Neural";
+"login_title_suffix" = "Mail";
+"login_subtitle" = "Next Generation Smart Mail Client";
+"login_email_label" = "Email Address";
+"login_email_placeholder" = "name@company.com";
+"login_next_button" = "Next";
+"login_manual_config" = "Manual Configuration";
+"login_footer" = "NEURALMAIL CLOUD";
+"login_password_label" = "Password";
+"login_password_placeholder" = "Enter your password";
+

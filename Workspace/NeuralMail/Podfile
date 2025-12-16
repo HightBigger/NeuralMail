@@ -1,0 +1,50 @@
+platform :ios, '15.0'
+project 'NeuralMail.xcodeproj'
+#use_frameworks!
+
+# Local Pods
+def local_pods
+#  pod 'NMCoreKit', :path => 'LocalPods/NMCoreKit'
+  pod 'NMModular', :path => 'LocalPods/NMModular'
+  pod 'NMKit', :path => 'LocalPods/NMKit'
+  
+  pod 'NMLog', :path => 'LocalPods/NMLog'
+  pod 'NMLogModule', :path => 'LocalPods/NMLogModule'
+  pod 'NMPreferenceModule', :path => 'LocalPods/NMPreferenceModule'
+  
+  pod 'NMNetworkModule', :path => 'LocalPods/NMNetworkModule'
+  pod 'NMDataModule', :path => 'LocalPods/NMDataModule'
+  
+  pod 'NMAuthModule', :path => 'LocalPods/NMAuthModule'
+  
+  pod 'MailCore2', :path => 'LocalPods/Vendor/MailCore2'
+  pod 'NMMailModule', :path => 'LocalPods/NMMailModule'
+  
+end
+
+target 'NeuralMail' do
+  # 静态库引入
+  use_frameworks! :linkage => :static
+
+  # Pods for NeuralMail
+  pod 'SnapKit'
+  pod 'Swinject'
+  pod 'MBProgressHUD'
+  pod 'MJRefresh'
+  # pod 'SQLCipher' # Uncomment when ready to configure encryption
+
+  local_pods
+
+end
+
+
+post_install do |installer|
+    installer.generated_projects.each do |project|
+          project.targets.each do |target|
+              target.build_configurations.each do |config|
+                  config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'
+               end
+          end
+   end
+end
+

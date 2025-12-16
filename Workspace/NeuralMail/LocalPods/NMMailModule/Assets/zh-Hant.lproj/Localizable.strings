@@ -1,0 +1,9 @@
+/* Login Screen */
+"login_title" = "Neural";
+"login_title_suffix" = "Mail";
+"login_subtitle" = "下一代智能郵件客戶端";
+"login_email_label" = "郵箱地址";
+"login_email_placeholder" = "name@company.com";
+"login_next_button" = "下一步";
+"login_manual_config" = "手動配置";
+"login_footer" = "NEURALMAIL CLOUD";
