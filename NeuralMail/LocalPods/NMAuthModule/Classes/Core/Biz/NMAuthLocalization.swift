@@ -22,4 +22,17 @@ public extension String {
     }
 }
 
+public extension URL {
+    
+    static func authResource(name:String,ext:String) -> URL? {
+        let bundle = Bundle(for: NMAuthBundleToken.self)
+        
+        if let path = bundle.path(forResource: "NMAuthModule", ofType: "bundle"),
+           let resourceBundle = Bundle(path: path) {
+            return URL.urlForResource(name: name, ext: ext, in: resourceBundle)
+        }
+        return nil
+    }
+}
+
 private final class NMAuthBundleToken {}

@@ -1,0 +1,6 @@
+framework module NMAuthModule {
+  umbrella header "NMAuthModule-umbrella.h"
+
+  export *
+  module * { export * }
+}

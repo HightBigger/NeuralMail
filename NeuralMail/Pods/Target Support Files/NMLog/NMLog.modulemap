@@ -1,0 +1,6 @@
+framework module NMLog {
+  umbrella header "NMLog-umbrella.h"
+
+  export *
+  module * { export * }
+}

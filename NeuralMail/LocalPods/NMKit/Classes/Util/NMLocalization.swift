@@ -34,8 +34,35 @@ public extension String {
         
         return outputBundle.localizedString(forKey: key, value: nil, table: nil)
     }
+}
 
+public extension URL {
+
+    static func urlForResource(name:String,ext:String, in bundle: Bundle = .main) -> URL? {
+
+        return bundle.url(forResource: name, withExtension: ext)
+    }
     
+    func localizedString(forKey key: String, outputBundle: Bundle = .main) -> String {
+
+        var code = NMLanguage.english.rawValue
+        
+        if let prefService = NMServiceContainer.shared.resolve(NMPreferenceService.self) {
+            code = prefService.language.rawValue
+        }
+        
+        if code == NMLanguage.system.rawValue {
+            let preferred = Bundle.preferredLocalizations(from: outputBundle.localizations, forPreferences: Locale.preferredLanguages)
+            code = preferred.first ?? NMLanguage.english.rawValue
+        }
+        
+        if let path = outputBundle.path(forResource: code, ofType: "lproj"),
+           let localizedBundle = Bundle(path: path) {
+            return localizedBundle.localizedString(forKey: key, value: nil, table: nil)
+        }
+        
+        return outputBundle.localizedString(forKey: key, value: nil, table: nil)
+    }
 }
 
 public protocol NMLocalizable: AnyObject {

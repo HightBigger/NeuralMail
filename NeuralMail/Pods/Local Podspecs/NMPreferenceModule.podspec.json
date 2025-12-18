@@ -1,0 +1,37 @@
+{
+  "name": "NMPreferenceModule",
+  "version": "0.1.0",
+  "summary": "NeuralMail Foundation Kit",
+  "description": "Core extensions, utilities, and base classes for NeuralMail.",
+  "homepage": "https://github.com/neuralmail/NMPreferenceModule",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "NeuralMail Team": "team@neuralmail.com"
+  },
+  "source": {
+    "path": "."
+  },
+  "platforms": {
+    "ios": "15.0"
+  },
+  "swift_versions": "5.0",
+  "source_files": "Classes/**/*",
+  "resource_bundles": {
+    "NMPreferenceModule": [
+      "Assets/**/*"
+    ]
+  },
+  "static_framework": true,
+  "dependencies": {
+    "NMKit": [
+
+    ],
+    "NMModular": [
+
+    ]
+  },
+  "swift_version": "5.0"
+}

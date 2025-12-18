@@ -1,0 +1,6 @@
+framework module NMMailModule {
+  umbrella header "NMMailModule-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "NMMailModule",
+  "version": "0.1.0",
+  "summary": "NeuralMail NMMailModule Module",
+  "description": "Handles login, auto-discovery, and authentication flows.",
+  "homepage": "https://github.com/neuralmail/NMMailModule",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "NeuralMail Team": "team@neuralmail.com"
+  },
+  "source": {
+    "path": "."
+  },
+  "platforms": {
+    "ios": "15.0"
+  },
+  "swift_versions": "5.0",
+  "resource_bundles": {
+    "NMMailModule": [
+      "Assets/**/*"
+    ]
+  },
+  "source_files": "Classes/**/*",
+  "dependencies": {
+    "NMModular": [
+
+    ],
+    "MailCore2": [
+
+    ]
+  },
+  "swift_version": "5.0"
+}

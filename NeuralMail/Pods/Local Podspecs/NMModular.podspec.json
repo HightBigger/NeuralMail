@@ -1,0 +1,25 @@
+{
+  "name": "NMModular",
+  "version": "1.0.0",
+  "summary": "NeuralMail核心模块注册与服务管理框架",
+  "description": "NeuralMail项目的核心模块注册与服务管理框架，提供模块解耦、服务注册发现、配置管理等功能。",
+  "homepage": "https://github.com/your-org/NeuralMail",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "NeuralMail Team": "team@neuralmail.com"
+  },
+  "source": {
+    "git": "",
+    "tag": "1.0.0"
+  },
+  "platforms": {
+    "ios": "15.0"
+  },
+  "swift_versions": "5.0",
+  "static_framework": true,
+  "source_files": "Classes/**/*.swift",
+  "swift_version": "5.0"
+}

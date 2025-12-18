@@ -1,0 +1,30 @@
+{
+  "name": "MailCore2",
+  "version": "0.6.4",
+  "summary": "MailCore2 XCFramework",
+  "description": "Local wrapper for MailCore2 xcframework",
+  "homepage": "http://libmailcore.com",
+  "license": "BSD",
+  "authors": {
+    "MailCore": "info@libmailcore.com"
+  },
+  "platforms": {
+    "ios": "13.0"
+  },
+  "source": {
+    "path": "."
+  },
+  "vendored_frameworks": "MailCore.xcframework",
+  "libraries": [
+    "z",
+    "iconv",
+    "c++"
+  ],
+  "frameworks": [
+    "CFNetwork",
+    "Security"
+  ],
+  "pod_target_xcconfig": {
+    "OTHER_LDFLAGS": "$(inherited) -ObjC"
+  }
+}

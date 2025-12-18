@@ -1,0 +1,13 @@
+${PODS_ROOT}/Target Support Files/Pods-NeuralMail/Pods-NeuralMail-resources.sh
+${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/CocoaLumberjack/CocoaLumberjackPrivacy.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManager/IQKeyboardManager.bundle
+${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh/MJRefresh.Privacy.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/NMAuthModule/NMAuthModule.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/NMKit/NMKit.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/NMMailModule/NMMailModule.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/NMPreferenceModule/NMPreferenceModule.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/SQLCipher/SQLCipher.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/SnapKit/SnapKit_Privacy.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/Swinject/Swinject.bundle

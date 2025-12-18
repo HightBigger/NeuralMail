@@ -1,0 +1,6 @@
+framework module NMDataModule {
+  umbrella header "NMDataModule-umbrella.h"
+
+  export *
+  module * { export * }
+}

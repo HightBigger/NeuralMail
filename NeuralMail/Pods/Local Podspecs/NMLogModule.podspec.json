@@ -1,0 +1,31 @@
+{
+  "name": "NMLogModule",
+  "version": "2.0.0",
+  "authors": "xiaoda",
+  "license": {
+    "type": "MIT",
+    "text": "Copyright 2023"
+  },
+  "homepage": "http://www.uusafe.com",
+  "summary": "NMLogModule",
+  "source": {
+    "git": "",
+    "tag": "2.0.0"
+  },
+  "platforms": {
+    "ios": "15.0"
+  },
+  "requires_arc": true,
+  "static_framework": true,
+  "swift_versions": "5.0",
+  "source_files": "Classes/**/*",
+  "dependencies": {
+    "NMLog": [
+
+    ],
+    "NMModular": [
+
+    ]
+  },
+  "swift_version": "5.0"
+}

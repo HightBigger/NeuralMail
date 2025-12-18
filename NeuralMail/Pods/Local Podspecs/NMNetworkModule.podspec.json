@@ -1,0 +1,35 @@
+{
+  "name": "NMNetworkModule",
+  "version": "0.1.0",
+  "summary": "NeuralMail Networking Layer",
+  "description": "Networking abstraction and protocol implementations (EAS/IMAP) for NeuralMail.",
+  "homepage": "https://github.com/neuralmail/NMNetwork",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "NeuralMail Team": "team@neuralmail.com"
+  },
+  "source": {
+    "path": "."
+  },
+  "platforms": {
+    "ios": "15.0"
+  },
+  "swift_versions": "5.0",
+  "static_framework": true,
+  "source_files": "Classes/**/*",
+  "dependencies": {
+    "NMKit": [
+
+    ],
+    "NMModular": [
+
+    ],
+    "Alamofire": [
+
+    ]
+  },
+  "swift_version": "5.0"
+}

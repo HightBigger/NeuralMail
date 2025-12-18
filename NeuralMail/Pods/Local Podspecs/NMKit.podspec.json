@@ -1,0 +1,43 @@
+{
+  "name": "NMKit",
+  "version": "0.1.0",
+  "summary": "NeuralMail Foundation Kit",
+  "description": "Core extensions, utilities, and base classes for NeuralMail.",
+  "homepage": "https://github.com/neuralmail/NMKit",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "NeuralMail Team": "team@neuralmail.com"
+  },
+  "source": {
+    "path": "."
+  },
+  "platforms": {
+    "ios": "15.0"
+  },
+  "swift_versions": "5.0",
+  "source_files": "Classes/**/*",
+  "resource_bundles": {
+    "NMKit": [
+      "Assets/**/*"
+    ]
+  },
+  "static_framework": true,
+  "dependencies": {
+    "SnapKit": [
+
+    ],
+    "NMModular": [
+
+    ],
+    "IQKeyboardManager": [
+
+    ],
+    "FDFullscreenPopGesture": [
+
+    ]
+  },
+  "swift_version": "5.0"
+}

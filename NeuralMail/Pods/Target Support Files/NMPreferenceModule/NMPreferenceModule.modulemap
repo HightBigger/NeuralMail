@@ -1,0 +1,6 @@
+framework module NMPreferenceModule {
+  umbrella header "NMPreferenceModule-umbrella.h"
+
+  export *
+  module * { export * }
+}

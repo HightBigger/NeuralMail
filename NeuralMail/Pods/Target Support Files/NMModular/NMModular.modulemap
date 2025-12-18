@@ -1,0 +1,6 @@
+framework module NMModular {
+  umbrella header "NMModular-umbrella.h"
+
+  export *
+  module * { export * }
+}

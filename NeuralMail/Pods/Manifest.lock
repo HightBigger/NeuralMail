@@ -1,0 +1,129 @@
+PODS:
+  - Alamofire (5.10.2)
+  - CocoaLumberjack (3.9.0):
+    - CocoaLumberjack/Core (= 3.9.0)
+  - CocoaLumberjack/Core (3.9.0)
+  - FDFullscreenPopGesture (1.1)
+  - GRDB.swift/SQLCipher (6.24.1):
+    - SQLCipher (>= 3.4.2)
+  - IQKeyboardManager (6.5.19)
+  - KeychainAccess (4.2.2)
+  - MailCore2 (0.6.4)
+  - MBProgressHUD (1.2.0)
+  - MJRefresh (3.7.9)
+  - NMAuthModule (0.1.0):
+    - KeychainAccess
+    - NMKit
+    - NMModular
+    - SnapKit
+  - NMDataModule (0.1.0):
+    - GRDB.swift/SQLCipher
+    - NMModular
+    - SQLCipher (~> 4.0)
+  - NMKit (0.1.0):
+    - FDFullscreenPopGesture
+    - IQKeyboardManager
+    - NMModular
+    - SnapKit
+  - NMLog (2.0.0):
+    - CocoaLumberjack
+  - NMLogModule (2.0.0):
+    - NMLog
+    - NMModular
+  - NMMailModule (0.1.0):
+    - MailCore2
+    - NMModular
+  - NMModular (1.0.0)
+  - NMNetworkModule (0.1.0):
+    - Alamofire
+    - NMKit
+    - NMModular
+  - NMPreferenceModule (0.1.0):
+    - NMKit
+    - NMModular
+  - SnapKit (5.7.1)
+  - SQLCipher (4.10.0):
+    - SQLCipher/standard (= 4.10.0)
+  - SQLCipher/common (4.10.0)
+  - SQLCipher/standard (4.10.0):
+    - SQLCipher/common
+  - Swinject (2.9.1)
+
+DEPENDENCIES:
+  - MailCore2 (from `LocalPods/Vendor/MailCore2`)
+  - MBProgressHUD
+  - MJRefresh
+  - NMAuthModule (from `LocalPods/NMAuthModule`)
+  - NMDataModule (from `LocalPods/NMDataModule`)
+  - NMKit (from `LocalPods/NMKit`)
+  - NMLog (from `LocalPods/NMLog`)
+  - NMLogModule (from `LocalPods/NMLogModule`)
+  - NMMailModule (from `LocalPods/NMMailModule`)
+  - NMModular (from `LocalPods/NMModular`)
+  - NMNetworkModule (from `LocalPods/NMNetworkModule`)
+  - NMPreferenceModule (from `LocalPods/NMPreferenceModule`)
+  - SnapKit
+  - Swinject
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - CocoaLumberjack
+    - FDFullscreenPopGesture
+    - GRDB.swift
+    - IQKeyboardManager
+    - KeychainAccess
+    - MBProgressHUD
+    - MJRefresh
+    - SnapKit
+    - SQLCipher
+    - Swinject
+
+EXTERNAL SOURCES:
+  MailCore2:
+    :path: LocalPods/Vendor/MailCore2
+  NMAuthModule:
+    :path: LocalPods/NMAuthModule
+  NMDataModule:
+    :path: LocalPods/NMDataModule
+  NMKit:
+    :path: LocalPods/NMKit
+  NMLog:
+    :path: LocalPods/NMLog
+  NMLogModule:
+    :path: LocalPods/NMLogModule
+  NMMailModule:
+    :path: LocalPods/NMMailModule
+  NMModular:
+    :path: LocalPods/NMModular
+  NMNetworkModule:
+    :path: LocalPods/NMNetworkModule
+  NMPreferenceModule:
+    :path: LocalPods/NMPreferenceModule
+
+SPEC CHECKSUMS:
+  Alamofire: 7193b3b92c74a07f85569e1a6c4f4237291e7496
+  CocoaLumberjack: 5644158777912b7de7469fa881f8a3f259c2512a
+  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  GRDB.swift: 136dcb5d8dddca50aae3ba7d77475f79e7232cd8
+  IQKeyboardManager: c8665b3396bd0b79402b4c573eac345a31c7d485
+  KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
+  MailCore2: 7c92a914626fdd44255b30e222d9685e353d62b5
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MJRefresh: ff9e531227924c84ce459338414550a05d2aea78
+  NMAuthModule: 17a2c51a246d5755a1ca4ea9999d395b89507c33
+  NMDataModule: 88bbe74c8877b6b50e50050a94e721fc723201ab
+  NMKit: 7306d908eb2e5c41c90b20c0fdb6f33e0923b0b6
+  NMLog: 4d3aec902d4cb8c0eba2b7097b3cacc2f566752c
+  NMLogModule: d85f92c431d2aa66db8d79f1043b015267252fbf
+  NMMailModule: 1dc984c50d7ac03710b87097cfec5eaaa5415230
+  NMModular: a16fb548c44417c8f2334012cf598939897000fc
+  NMNetworkModule: 22c71ab606fa60082c5a39a08c30c480683fbc6c
+  NMPreferenceModule: 178111d8d78d8ce0f2ee5227d524d51a980d0495
+  SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
+  SQLCipher: eb79c64049cb002b4e9fcb30edb7979bf4706dfc
+  Swinject: a827d508c6270da03ec74e558e728917a888fa9b
+
+PODFILE CHECKSUM: fb4745ce99c1930ac72b8f491f4a30468c021d8d
+
+COCOAPODS: 1.16.2
