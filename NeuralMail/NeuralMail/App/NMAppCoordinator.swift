@@ -1,23 +1,24 @@
 import UIKit
+import SwiftUI
 import NMKit
 import NMAuthModule
 import NMModular
 
-class NMAppCoordinator: NMCoordinator {
+class NMAppCoordinator {
     
     @NMLogger("NMApp") var logger
     
-    var navigationController: NMBaseNavigationController
     var window: UIWindow
     
     init(window: UIWindow) {
         self.window = window
-        self.navigationController = NMBaseNavigationController(rootViewController: NMSplashViewController())
     }
     
     func start() {
-        window.rootViewController = navigationController
+        window.rootViewController = NMNavigationController(rootViewController: NMSplashViewController())
         window.makeKeyAndVisible()
+        
+        setupObservers()
     }
     
     func splashViewControllerDidFinish() {
@@ -36,10 +37,10 @@ class NMAppCoordinator: NMCoordinator {
         
         // 2. 核心判断
         if authService.isLoggedIn {
-            logger.info("🚀 [App] User is logged in. Going to Main.")
+            logger.info("[App] User is logged in. Going to Main.")
             switchToMain()
         } else {
-            logger.info("🛑 [App] User not logged in. Going to Login.")
+            logger.info("[App] User not logged in. Going to Login.")
             switchToLogin()
         }
     }
@@ -48,31 +49,35 @@ class NMAppCoordinator: NMCoordinator {
     
     private func switchToLogin() {
         
+        // 2. 初始化你的 SwiftUI 视图
+        //        let swiftUIView = AITestView()
+        //
+        //        // 3. 用 UIHostingController 把它包起来
+        //        let hostingController = UIHostingController(rootView: swiftUIView)
+        //
+        //        // 4. (可选) 设置弹出样式，比如全屏或卡片
+        //        hostingController.modalPresentationStyle = .pageSheet
+        //
+        //        setRoot(hostingController)
+        //
+        //        return
         // 这里通过路由获取
-        // let loginVC = NMRouter.shared.match(url: "/auth/login")
         if let loginVC = NMRouter.shared.match(url: "/auth/login") {
-            let nav = NMBaseNavigationController(rootViewController: loginVC)
+            let nav = NMNavigationController(rootViewController: loginVC)
             setRoot(nav)
         }
     }
     
     private func switchToMain() {
-        // 初始化你的主业务 TabBar
-        // let mainVC = MainTabBarController()
-        let mainVC = UIViewController() // 占位
-        mainVC.view.backgroundColor = .white
-        mainVC.title = "Inbox"
-        let nav = NMBaseNavigationController(rootViewController: mainVC)
+        let nav = NMMainTabBarController()
         setRoot(nav)
     }
     
     private func switchToError() {
-        // 初始化你的主业务 TabBar
-        // let mainVC = MainTabBarController()
         let mainVC = UIViewController() // 占位
         mainVC.view.backgroundColor = .white
         mainVC.title = "Error"
-        let nav = NMBaseNavigationController(rootViewController: mainVC)
+        let nav = NMNavigationController(rootViewController: mainVC)
         setRoot(nav)
     }
     
@@ -97,5 +102,3 @@ class NMAppCoordinator: NMCoordinator {
         }
     }
 }
-
-

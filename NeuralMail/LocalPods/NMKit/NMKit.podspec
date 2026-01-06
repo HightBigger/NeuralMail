@@ -24,4 +24,7 @@ Pod::Spec.new do |s|
   s.dependency 'NMModular'
   s.dependency 'IQKeyboardManager'
   s.dependency 'FDFullscreenPopGesture'
+  s.dependency 'KRProgressHUD'
+  s.dependency 'SwiftMessages'
+  
 end

@@ -32,6 +32,8 @@ public final class NMKitModule: NMModuleType {
         // 3. (可选) 键盘管理器配置
         setupKeyboardManager()
         
+        await NMHUD.configure()
+        
         print("🎨 [NMKitModule] UI Infrastructure ready.")
     }
     
@@ -54,6 +56,8 @@ public final class NMKitModule: NMModuleType {
         if #available(iOS 15.0, *) {
             UITabBar.appearance().scrollEdgeAppearance = tabAppearance
         }
+        
+        
     }
     
     private func setupKeyboardManager() {
@@ -62,6 +66,7 @@ public final class NMKitModule: NMModuleType {
         IQKeyboardManager.shared().shouldResignOnTouchOutside = true
         IQKeyboardManager.shared().keyboardDistanceFromTextField = 0
         IQKeyboardManager.shared().isEnableAutoToolbar = false
+        IQKeyboardManager.shared().toolbarManageBehavior = .byPosition
         
     }
 }

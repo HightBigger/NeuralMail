@@ -1,0 +1,6 @@
+framework module NMFeatureModule {
+  umbrella header "NMFeatureModule-umbrella.h"
+
+  export *
+  module * { export * }
+}

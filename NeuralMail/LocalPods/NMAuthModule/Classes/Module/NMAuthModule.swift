@@ -20,8 +20,11 @@ public final class NMAuthModule: NMModuleType {
         registry.register(NMAuthService.self, scope: .singleton) {
             NMAuthServiceImpl()
         }
+
+        registry.register(NMAccountRepository.self, scope: .singleton) {
+            NMAccountRepository()
+        }
         
-        // 2. 注册数据库迁移 (Core/Database)
         if let dbService = registry.resolve(NMDatabaseService.self) {
             dbService.register(migration: NMAuthMigration())
         }
@@ -34,21 +37,15 @@ public final class NMAuthModule: NMModuleType {
             let loginVC = NMLoginViewController(defaultEmail: email )
             return loginVC
         }
-        
-        // 注册注册页路由: nm://auth/register
-        NMRouter.shared.register(path: "/auth/register") { _ in
-            let loginVC = NMRegisterViewController()
-            return loginVC
-        }
+       
     }
     
     public func start(context: NMLaunchContext) async {
-        // 3. 注入网络拦截器 (Core/Network)
+        
+      
+        
         if let netService = NMServiceContainer.shared.resolve(NMNetworkService.self) {
             netService.register(interceptor: NMAuthInterceptor())
         }
-        
-        // 可以在这里做一些简单的 Token 预检
-        print("🔐 [NMAuthModule] Ready.")
     }
 }

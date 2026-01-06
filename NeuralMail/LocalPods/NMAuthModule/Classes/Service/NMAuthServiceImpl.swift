@@ -7,21 +7,24 @@
 
 import Foundation
 import NMModular
+import NMKit
 
 final class NMAuthServiceImpl: NMAuthService {
     
-    // ✅ 自动注入带模块名的日志: [Auth] [INFO] ...
-    @NMLogger("AuthModule") var logger
-    
+    @NMLogger("NMAuthModule") var logger
+    @NMInjected var mailService: NMMailService
+    @NMInjected var accountRepository: NMAccountRepository
+
     // 注入基础设施
     @NMInjected var network: NMNetworkService
     @NMInjected var db: NMDatabaseService
     
     // 内存缓存
     private(set) var currentUser: NMUser?
+    private(set) var currentConfig:NMMailConfig?
     
     var isLoggedIn: Bool {
-        return accessToken != nil
+        return currentUser != nil
     }
     
     var accessToken: String? {
@@ -31,29 +34,36 @@ final class NMAuthServiceImpl: NMAuthService {
     
     init() {
         // 尝试恢复会话
-        Task { await restoreSession() }
+        restoreSession()
     }
     
     // MARK: - 登录逻辑
+    func syncAccount() async throws {
+        
+        guard let config = currentConfig else { return }
+        
+        logger.info("syncAccount start: \(config.email)")
+        
+        try await mailService.connect(config: config)
+        
+        logger.info("syncAccount 连接成功: \(config.username)")
+    }
     
-    func login(email: String, password: String) async throws {
-        logger.info("Login start: \(email)")
+    
+    func login(config: NMMailConfig) async throws {
         
-        // 1. 网络请求
-        let response: NMLoginResponse = try await network.request(NMAuthAPI.login(email: email, pass: password))
+        logger.info("Login start: \(config.email)")
         
-        // 2. 持久化 Token
-        self.accessToken = response.token
+        try await mailService.connect(config: config)
+        logger.info("Auth模块 连接成功: \(config.username)")
         
-        // 3. ✅ 持久化 User (完全解耦的调用)
-        // 不需要 import GRDB，直接把 Model 扔给 Data 模块
-        try await db.save(response.user)
+        let newUser = NMUser(email: config.email)
+        accountRepository.saveAccount(user: newUser, config: config)
         
-        // 4. 更新状态
-        self.currentUser = response.user
+        self.currentUser = newUser
+        self.currentConfig = config
         
-        // 5. 通知
-        NMModuleManager.shared.userDidLogin(userId: response.user.id)
+        NMModuleManager.shared.userDidLogin(userId: newUser.id)
         NotificationCenter.default.post(name: .NMUserDidLogin, object: nil)
         
         logger.info("Login success")
@@ -64,23 +74,10 @@ final class NMAuthServiceImpl: NMAuthService {
     func logout() async {
         logger.info("Logging out...")
          
-        // 1. 尝试发送网络请求 (Best Effort)
-        // 使用 do-catch 捕获错误，防止因网络失败导致函数中断，从而没走到下面的清理逻辑
-        do {
-            // 注意：这里假设 NMLogoutResponse 已经在 DTO 文件中定义
-            let response: NMLogoutResponse = try await network.request(NMAuthAPI.logout)
-            
-            if !response.ret {
-                logger.warn("Server returned failure for logout, but clearing local session anyway.")
-            }
-        } catch {
-            // 如果断网了，这里会报错，我们要捕获它，不要让它抛给上层
-            logger.error("Logout network request failed: \(error). Proceeding with local cleanup.")
-        }
-        
-        // 2. 清理本地
         self.accessToken = nil
         self.currentUser = nil
+        
+        accountRepository.logoutCurrent()
         
         // 3. 通知
         NMModuleManager.shared.userDidLogout()
@@ -90,20 +87,18 @@ final class NMAuthServiceImpl: NMAuthService {
     
     // MARK: - 辅助方法
     
-    private func restoreSession() async {
-        guard isLoggedIn else { return }
+    private func restoreSession() {
         
-        // 假设我们在 UserDefault 存了当前用户的 ID
-        guard let uid = UserDefaults.standard.string(forKey: "current_user_id") else { return }
-        
-        // ✅ 泛型读取用户信息
-        do {
-            if let user = try await db.fetch(NMUser.self, id: uid) {
-                self.currentUser = user
-                logger.debug("Session restored for user: \(user.email)")
-            }
-        } catch {
-            logger.error("Failed to restore session: \(error)")
+        if let account = accountRepository.getCurrentAccount() {
+            
+            self.currentUser = account.user        // NMUser 对象
+            self.currentConfig = account.config       // NMMailConfig 对象 (包含解密后的 password)
+            
+            logger.info("当前登录用户: \(self.currentUser!.email)")
+            logger.info("IMAP 主机: \(self.currentConfig!.host)")
+            
+        } else {
+            logger.info("未找到有效账号，请跳转登录页")
         }
     }
 }

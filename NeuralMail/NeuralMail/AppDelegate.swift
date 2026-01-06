@@ -13,6 +13,8 @@ import NMNetworkModule
 import NMAuthModule
 import NMKit
 import NMPreferenceModule
+import NMMailModule
+import NMFeatureModule
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -42,9 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NMKitModule(),
             NMPreferenceModule(),
             NMAuthModule(),
-//            NMChatModule(),
-//            NMNetworkModule(), // 假设有
-//            NMConfigModule()   // 假设有
+            NMMailModule(),
+            NMFeatureModule()
         ])
         
         // 3. 启动引擎

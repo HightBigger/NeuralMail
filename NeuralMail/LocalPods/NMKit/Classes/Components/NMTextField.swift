@@ -17,6 +17,23 @@ public class NMTextField: UIView {
     private let iconImageView = UIImageView()
     private let rightStackView = UIStackView()
     
+    public var isEnabled: Bool {
+        get { return internalTextField.isEnabled }
+        set {
+            internalTextField.isEnabled = newValue
+            // 可选：根据状态改变透明度，给用户视觉反馈
+            self.alpha = newValue ? 1.0 : 0.6
+        }
+    }
+    
+    public var textColor: UIColor? {
+        get { return internalTextField.textColor }
+        set {
+            internalTextField.textColor = newValue
+        }
+    }
+    
+    
     // 自定义清除按钮
     private lazy var clearButton: UIButton = {
         let btn = UIButton(type: .custom)

@@ -15,8 +15,8 @@ public final class NMMailModule: NMModuleType {
     
     public func registerServices(registry: NMServiceRegistry) {
         // 注册邮件客户端服务
-        registry.register(NMMailClientService.self, scope: .singleton) {
-            NMMailClientServiceImpl()
+        registry.register(NMMailService.self, scope: .singleton) {
+            NMMailServiceImpl()
         }
     }
     

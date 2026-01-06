@@ -20,6 +20,8 @@ def local_pods
   pod 'MailCore2', :path => 'LocalPods/Vendor/MailCore2'
   pod 'NMMailModule', :path => 'LocalPods/NMMailModule'
   
+  pod 'NMFeatureModule', :path => 'LocalPods/NMFeatureModule'
+  
 end
 
 target 'NeuralMail' do
@@ -32,7 +34,8 @@ target 'NeuralMail' do
   pod 'MBProgressHUD'
   pod 'MJRefresh'
   # pod 'SQLCipher' # Uncomment when ready to configure encryption
-
+  pod 'SideMenu'
+  
   local_pods
 
 end

@@ -17,7 +17,6 @@ Pod::Spec.new do |s|
   }
   
   s.source_files = 'Classes/**/*'
-#  s.vendored_frameworks = 'Frameworks/*.framework'
 
   # Dependencies
   s.dependency 'NMModular'

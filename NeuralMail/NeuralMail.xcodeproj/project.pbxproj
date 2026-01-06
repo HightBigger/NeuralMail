@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21BC88872EF5403B00E1ADC7 /* NMAIModule in Frameworks */ = {isa = PBXBuildFile; productRef = 21BC88862EF5403B00E1ADC7 /* NMAIModule */; };
+		21BC88F72EF54DB800E1ADC7 /* LLM in Resources */ = {isa = PBXBuildFile; fileRef = 21BC88F62EF54DB800E1ADC7 /* LLM */; };
 		92A835EA807DB35AFD31CE73 /* Pods_NeuralMail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D81C0BD50973676D6C0564 /* Pods_NeuralMail.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21BC88F62EF54DB800E1ADC7 /* LLM */ = {isa = PBXFileReference; lastKnownFileType = folder; name = LLM; path = NeuralMail/LLM; sourceTree = "<group>"; };
 		21BDF7E62EE6A54900FE7912 /* NeuralMail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeuralMail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63D81C0BD50973676D6C0564 /* Pods_NeuralMail.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NeuralMail.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94F603871BB99BAF6AD8A355 /* Pods-NeuralMail.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeuralMail.release.xcconfig"; path = "Target Support Files/Pods-NeuralMail/Pods-NeuralMail.release.xcconfig"; sourceTree = "<group>"; };
@@ -44,6 +47,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92A835EA807DB35AFD31CE73 /* Pods_NeuralMail.framework in Frameworks */,
+				21BC88872EF5403B00E1ADC7 /* NMAIModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +57,7 @@
 		21BDF7DD2EE6A54900FE7912 = {
 			isa = PBXGroup;
 			children = (
+				21BC88F62EF54DB800E1ADC7 /* LLM */,
 				21BDF7E82EE6A54900FE7912 /* NeuralMail */,
 				21BDF7E72EE6A54900FE7912 /* Products */,
 				4309B2E0303F4948DD0A33B6 /* Pods */,
@@ -136,6 +141,10 @@
 			);
 			mainGroup = 21BDF7DD2EE6A54900FE7912;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				21BAA36E2EF5203C00ABD316 /* XCRemoteSwiftPackageReference "mlx-swift" */,
+				21BC88852EF5403B00E1ADC7 /* XCLocalSwiftPackageReference "NMAIModule" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 21BDF7E72EE6A54900FE7912 /* Products */;
 			projectDirPath = "";
@@ -151,6 +160,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21BC88F72EF54DB800E1ADC7 /* LLM in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +242,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NeuralMail/NeuralMail.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -245,7 +256,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -271,6 +282,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NeuralMail/NeuralMail.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -284,7 +296,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -445,6 +457,31 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		21BC88852EF5403B00E1ADC7 /* XCLocalSwiftPackageReference "NMAIModule" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = NMAIModule;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		21BAA36E2EF5203C00ABD316 /* XCRemoteSwiftPackageReference "mlx-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ml-explore/mlx-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.29.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		21BC88862EF5403B00E1ADC7 /* NMAIModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NMAIModule;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 21BDF7DE2EE6A54900FE7912 /* Project object */;
 }

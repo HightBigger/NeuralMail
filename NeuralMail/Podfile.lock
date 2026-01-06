@@ -8,6 +8,9 @@ PODS:
     - SQLCipher (>= 3.4.2)
   - IQKeyboardManager (6.5.19)
   - KeychainAccess (4.2.2)
+  - KRActivityIndicatorView (3.0.8)
+  - KRProgressHUD (3.4.8):
+    - KRActivityIndicatorView (= 3.0.8)
   - MailCore2 (0.6.4)
   - MBProgressHUD (1.2.0)
   - MJRefresh (3.7.9)
@@ -20,11 +23,17 @@ PODS:
     - GRDB.swift/SQLCipher
     - NMModular
     - SQLCipher (~> 4.0)
+  - NMFeatureModule (0.1.0):
+    - NMKit
+    - NMModular
+    - SideMenu
   - NMKit (0.1.0):
     - FDFullscreenPopGesture
     - IQKeyboardManager
+    - KRProgressHUD
     - NMModular
     - SnapKit
+    - SwiftMessages
   - NMLog (2.0.0):
     - CocoaLumberjack
   - NMLogModule (2.0.0):
@@ -41,12 +50,16 @@ PODS:
   - NMPreferenceModule (0.1.0):
     - NMKit
     - NMModular
+  - SideMenu (6.5.0)
   - SnapKit (5.7.1)
   - SQLCipher (4.10.0):
     - SQLCipher/standard (= 4.10.0)
   - SQLCipher/common (4.10.0)
   - SQLCipher/standard (4.10.0):
     - SQLCipher/common
+  - SwiftMessages (10.0.2):
+    - SwiftMessages/App (= 10.0.2)
+  - SwiftMessages/App (10.0.2)
   - Swinject (2.9.1)
 
 DEPENDENCIES:
@@ -55,6 +68,7 @@ DEPENDENCIES:
   - MJRefresh
   - NMAuthModule (from `LocalPods/NMAuthModule`)
   - NMDataModule (from `LocalPods/NMDataModule`)
+  - NMFeatureModule (from `LocalPods/NMFeatureModule`)
   - NMKit (from `LocalPods/NMKit`)
   - NMLog (from `LocalPods/NMLog`)
   - NMLogModule (from `LocalPods/NMLogModule`)
@@ -62,6 +76,7 @@ DEPENDENCIES:
   - NMModular (from `LocalPods/NMModular`)
   - NMNetworkModule (from `LocalPods/NMNetworkModule`)
   - NMPreferenceModule (from `LocalPods/NMPreferenceModule`)
+  - SideMenu
   - SnapKit
   - Swinject
 
@@ -73,10 +88,14 @@ SPEC REPOS:
     - GRDB.swift
     - IQKeyboardManager
     - KeychainAccess
+    - KRActivityIndicatorView
+    - KRProgressHUD
     - MBProgressHUD
     - MJRefresh
+    - SideMenu
     - SnapKit
     - SQLCipher
+    - SwiftMessages
     - Swinject
 
 EXTERNAL SOURCES:
@@ -86,6 +105,8 @@ EXTERNAL SOURCES:
     :path: LocalPods/NMAuthModule
   NMDataModule:
     :path: LocalPods/NMDataModule
+  NMFeatureModule:
+    :path: LocalPods/NMFeatureModule
   NMKit:
     :path: LocalPods/NMKit
   NMLog:
@@ -108,22 +129,27 @@ SPEC CHECKSUMS:
   GRDB.swift: 136dcb5d8dddca50aae3ba7d77475f79e7232cd8
   IQKeyboardManager: c8665b3396bd0b79402b4c573eac345a31c7d485
   KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
+  KRActivityIndicatorView: c5c503bf56e54834382dd926b64ff47287ca0006
+  KRProgressHUD: d0fb4e72428d312eb6966e84c543ea58fb1efbc7
   MailCore2: 7c92a914626fdd44255b30e222d9685e353d62b5
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJRefresh: ff9e531227924c84ce459338414550a05d2aea78
   NMAuthModule: 17a2c51a246d5755a1ca4ea9999d395b89507c33
   NMDataModule: 88bbe74c8877b6b50e50050a94e721fc723201ab
-  NMKit: 7306d908eb2e5c41c90b20c0fdb6f33e0923b0b6
+  NMFeatureModule: 8ddc653ebafe99218a7d0183aa5696f92cfd651e
+  NMKit: df6e6ad6b6a836142ca934caed32c1bdddccdb2b
   NMLog: 4d3aec902d4cb8c0eba2b7097b3cacc2f566752c
   NMLogModule: d85f92c431d2aa66db8d79f1043b015267252fbf
   NMMailModule: 1dc984c50d7ac03710b87097cfec5eaaa5415230
   NMModular: a16fb548c44417c8f2334012cf598939897000fc
   NMNetworkModule: 22c71ab606fa60082c5a39a08c30c480683fbc6c
   NMPreferenceModule: 178111d8d78d8ce0f2ee5227d524d51a980d0495
+  SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
   SQLCipher: eb79c64049cb002b4e9fcb30edb7979bf4706dfc
+  SwiftMessages: bfefe945bc05ce7cd328303d53d0d1849e29109d
   Swinject: a827d508c6270da03ec74e558e728917a888fa9b
 
-PODFILE CHECKSUM: fb4745ce99c1930ac72b8f491f4a30468c021d8d
+PODFILE CHECKSUM: 26b878f0e7aa7d021e7580478c524b67973aa85b
 
 COCOAPODS: 1.16.2

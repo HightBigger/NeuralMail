@@ -103,11 +103,13 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh/MJRefresh.Privacy.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/NMAuthModule/NMAuthModule.bundle"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/NMFeatureModule/NMFeatureModule.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/NMKit/NMKit.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/NMMailModule/NMMailModule.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/NMPreferenceModule/NMPreferenceModule.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/SQLCipher/SQLCipher.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/SnapKit/SnapKit_Privacy.bundle"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/SwiftMessages/SwiftMessages.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/Swinject/Swinject.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -117,11 +119,13 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh/MJRefresh.Privacy.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/NMAuthModule/NMAuthModule.bundle"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/NMFeatureModule/NMFeatureModule.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/NMKit/NMKit.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/NMMailModule/NMMailModule.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/NMPreferenceModule/NMPreferenceModule.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/SQLCipher/SQLCipher.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/SnapKit/SnapKit_Privacy.bundle"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/SwiftMessages/SwiftMessages.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/Swinject/Swinject.bundle"
 fi
 

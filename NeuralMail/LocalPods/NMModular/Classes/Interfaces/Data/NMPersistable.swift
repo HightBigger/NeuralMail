@@ -14,7 +14,7 @@ import Foundation
 /// 1. 继承 Codable：利用 Swift 原生能力进行序列化/反序列化，天然适配 GRDB、CoreData 或 JSON 文件。
 /// 2. 继承 Identifiable：适配 SwiftUI 和列表 Diff 算法。
 /// 3. 无 GRDB 依赖：保持 Core 层纯净。
-public protocol NMPersistable: Codable, Identifiable {
+public protocol NMPersistable: Codable, Identifiable, Equatable {
     
     /// 数据库中的表名
     /// 例如: "emails", "contacts"

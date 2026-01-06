@@ -10,3 +10,15 @@
 "login_password_label" = "密码";
 "login_password_placeholder" = "请输入密码";
 
+"config_title" = "服务器配置";
+"config_subtitle" = "请配置您的服务器信息";
+"config_incoming_label" = "收件服务器";
+"config_incoming_placeholder" = "主机名 (例如 imap.gmail.com)";
+"config_port_placeholder" = "端口";
+"config_security_placeholder" = "加密方式";
+"config_outgoing_label" = "发件服务器";
+"config_outgoing_placeholder" = "主机名 (例如 smtp.gmail.com)";
+"config_login_button" = "登录";
+"config_login_config_error" = "请填写完整配置信息";
+"config_login_port_error" = "端口号必须是数字";
+"config_login_auth_error" = "账号或密码错误";

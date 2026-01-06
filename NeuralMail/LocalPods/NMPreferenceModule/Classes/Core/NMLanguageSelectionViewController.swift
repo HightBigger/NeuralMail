@@ -33,7 +33,7 @@ extension NMLanguage {
     }
 }
 
-class NMLanguageSelectionViewController: NMBaseViewController {
+class NMLanguageSelectionViewController: NMViewController {
 
     @NMInjected var prefService: NMPreferenceService
     

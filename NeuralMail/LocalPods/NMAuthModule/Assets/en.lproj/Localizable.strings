@@ -10,3 +10,15 @@
 "login_password_label" = "Password";
 "login_password_placeholder" = "Enter your password";
 
+"config_title" = "Server Configuration";
+"config_subtitle" = "Configure your server information";
+"config_incoming_label" = "Receiving server";
+"config_incoming_placeholder" = "Hostname (e.g. imap.gmail.com)";
+"config_port_placeholder" = "Port";
+"config_security_placeholder" = "Security";
+"config_outgoing_label" = "Sending server";
+"config_outgoing_placeholder" = "Hostname (e.g. smpt.gmail.com)";
+"config_login_button" = "Login";
+"config_login_config_error" = "Please fill in the complete configuration information ";
+"config_login_port_error" = "The port number must be a number ";
+"config_login_auth_error" = "account or password error";

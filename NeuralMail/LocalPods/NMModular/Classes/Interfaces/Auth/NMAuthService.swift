@@ -22,18 +22,20 @@ public protocol NMAuthService {
     /// 当前是否已登录
     var isLoggedIn: Bool { get }
     
-    /// 获取当前登录的用户信息 (内存缓存)
-    /// 如果数据库读取尚未完成，可能暂时为 nil
+    /// 获取当前登录的用户信息
     var currentUser: NMUser? { get }
+    
+    /// 读取当前登录邮箱的配置
+    var currentConfig: NMMailConfig? {get}
     
     /// 获取当前的 Access Token (用于网络请求)
     var accessToken: String? { get }
     
-    /// 执行登录
-    /// - Parameters:
-    ///   - email: 邮箱
-    ///   - password: 密码
-    func login(email: String, password: String) async throws
+    /// 账号校验
+    func login(config: NMMailConfig) async throws
+    
+    /// 静默校验
+    func syncAccount() async throws
     
     /// 执行登出
     /// 包含网络通知和本地清理
